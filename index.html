@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latest News</title>
+    <link rel="stylesheet" href="design.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="main-head">
+      <h1 class="logo">Latest News</h1>
+      <ul class="nav-links">
+        <a href="#" class="li-link">Home</a>
+        <a href="sports.html" class="li-link">Sports</a>
+        <a href="#" class="li-link">Life</a>
+        <a href="#" class="li-link">Tech</a>
+      </ul>
+    </header>
+    <main class="main-page">
+      <!-- hero section -->
+      <section class="hero-sec">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5hNbAwIvyeFE_5I3zTWACR0qpIXBClUh1uA&s"
+          alt=""
+        />
+        <div class="news-contant">
+          <h2 class="news-title">Welcome to our website</h2>
+          <p class="news-para">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Repellendus dolore voluptate a delectus impedit quaerat eos totam
+            hic vero dignissimos minima ipsam, architecto error. Laborum nam
+            dolores neque sequi iusto quod consequuntur culpa ad qui, modi,
+            accusamus praesentium quasi distinctio?
+          </p>
+        </div>
+      </section>
+      <section class="latest-news">
+        <h1 class="latest-title">Latest News</h1>
+        <swiper-container class="mySwiper" init="false" id="latest-sec">
+        </swiper-container>
+      </section>
+    </main>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <script>
+      const swiperEl = document.querySelector("swiper-container");
+      Object.assign(swiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 5,
+        pagination: {
+          clickable: true,
+        },
+        breakpoints: {
+          "@0.00": {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          "@0.75": {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          "@1.00": {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          "@1.50": {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        },
+      });
+
+      swiperEl.initialize();
+    </script>
+  </body>
+</html>
