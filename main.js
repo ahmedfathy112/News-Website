@@ -13,7 +13,8 @@ fetch(apiUrl)
       const description = article.description;
       const publishTime = article.publishedAt;
 
-      latestSec.innerHTML += `
+      if (sourceName && title && image && url && description && publishTime) {
+        latestSec.innerHTML += `
       <swiper-slide
       ><img src="${image}" alt="" />
       <div class="author">from: <span>${sourceName}</span>
@@ -31,6 +32,7 @@ fetch(apiUrl)
             </div>
             </swiper-slide>
         `;
+      }
     });
   })
   .catch((error) => console.error("Error fetching data:", error));
@@ -56,7 +58,15 @@ fetch(apiUrl2)
       const descriptionSports = article.description;
       const publishTimeSports = article.publishedAt;
 
-      sportsSec.innerHTML += `
+      if (
+        sourceNameSports &&
+        titleSports &&
+        imageSports &&
+        urlSports &&
+        descriptionSports &&
+        publishTimeSports
+      ) {
+        sportsSec.innerHTML += `
       <div class="card">
           <img src="${imageSports}" alt="" />
           <h2 class="author">from :<span>${sourceNameSports}</span></h2>
@@ -71,6 +81,7 @@ fetch(apiUrl2)
           </p>
         </div>
       `;
+      }
     });
   })
   .catch((error) => console.error("Error fetching data:", error));
@@ -95,7 +106,15 @@ fetch(apiUrl3)
       const descriptionTech = article.description;
       const publishTimeTech = article.publishedAt;
 
-      techSec.innerHTML += `
+      if (
+        sourceNameTech &&
+        titleTech &&
+        imageTech &&
+        urlTech &&
+        descriptionTech &&
+        publishTimeTech
+      ) {
+        techSec.innerHTML += `
       <div class="card">
           <img src="${imageTech}" alt="" />
           <h2 class="author">from :<span>${sourceNameTech}</span></h2>
@@ -110,6 +129,7 @@ fetch(apiUrl3)
           </p>
         </div>
       `;
+      }
     });
   })
   .catch((error) => console.error("Error fetching data:", error));
@@ -125,9 +145,7 @@ const apiUrl4 = `https://newsapi.org/v2/top-headlines?q=${encodeURIComponent(
 fetch(apiUrl4)
   .then((response) => response.json())
   .then((data) => {
-    // عمل لوب على البيانات المسترجعة
     data.articles.forEach((article) => {
-      // استخراج البيانات المطلوبة
       const sourceNameLife = article.source.name;
       const titleLife = article.title;
       const imageLife = article.urlToImage;
@@ -135,7 +153,15 @@ fetch(apiUrl4)
       const descriptionLife = article.description;
       const publishTimeLife = article.publishedAt;
 
-      lifeSec.innerHTML += `
+      if (
+        sourceNameLife &&
+        titleLife &&
+        imageLife &&
+        urlLife &&
+        descriptionLife &&
+        publishTimeLife
+      ) {
+        lifeSec.innerHTML += `
       <div class="card">
           <img src="${imageLife}" alt="" />
           <h2 class="author">from :<span>${sourceNameLife}</span></h2>
@@ -150,6 +176,7 @@ fetch(apiUrl4)
           </p>
         </div>
       `;
+      }
     });
   })
   .catch((error) => console.error("Error fetching data:", error));
