@@ -6,7 +6,7 @@ fetch(apiUrl)
   .then((response) => response.json())
   .then((data) => {
     data.articles.forEach((article) => {
-      const sourceName = article.source.name;
+      const sourceName = article.source?.name;
       const title = article.title;
       const image = article.urlToImage;
       const url = article.url;
@@ -51,7 +51,7 @@ fetch(apiUrl2)
     // عمل لوب على البيانات المسترجعة
     data.articles.forEach((article) => {
       // استخراج البيانات المطلوبة
-      const sourceNameSports = article.source.name;
+      const sourceNameSports = article.source?.name;
       const titleSports = article.title;
       const imageSports = article.urlToImage;
       const urlSports = article.url;
@@ -99,7 +99,7 @@ fetch(apiUrl3)
     // عمل لوب على البيانات المسترجعة
     data.articles.forEach((article) => {
       // استخراج البيانات المطلوبة
-      const sourceNameTech = article.source.name;
+      const sourceNameTech = article.source?.name;
       const titleTech = article.title;
       const imageTech = article.urlToImage;
       const urlTech = article.url;
@@ -146,7 +146,7 @@ fetch(apiUrl4)
   .then((response) => response.json())
   .then((data) => {
     data.articles.forEach((article) => {
-      const sourceNameLife = article.source.name;
+      const sourceNameLife = article.source?.name;
       const titleLife = article.title;
       const imageLife = article.urlToImage;
       const urlLife = article.url;
